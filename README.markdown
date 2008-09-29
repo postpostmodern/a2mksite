@@ -1,4 +1,4 @@
-# a2mksite: Apache 2 vhost generator script
+# a2mksite: Apache 2 Virtual Host Generator Script
 
 I'm not a big fan of using control panels like Plesk and cPanel to manage my Apache sites. But setting up a new site by hand can take _minutes_. I don't have that kind of time! :)
 
