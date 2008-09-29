@@ -16,7 +16,7 @@ __PLEASE NOTE:__ This script is intended to be a __time saver__. It's not a subs
 
 # BETA WARNING
 
-___This script works fine for me (using Ubuntu 8.04, Apache 2.2 and logrotate on Slicehost), but server setups vary greatly. USE THIS SCRIPT AT YOUR OWN RISK!! It mainly just creates some files and restarts Apache, but there is always risk involved with running a script (esp. using sudo). I AM NOT RESPONSIBLE FOR DAMAGE CAUSED BY THIS SCRIPT.__
+___This script works fine for me (using Ubuntu 8.04, Apache 2.2 and logrotate on Slicehost), but server setups vary greatly. USE THIS SCRIPT AT YOUR OWN RISK!! It mainly just creates some files and restarts Apache, but there is always risk involved with running a script (esp. using sudo). I AM NOT RESPONSIBLE FOR DAMAGE CAUSED BY THIS SCRIPT.___
 
 If you're a web server admin, you may very well know more about configuring Apache and logrotate than I do. If you find any flaws with this script or have any recommendations as to how this script can be improved, please fork it and send me a pull request.
 
