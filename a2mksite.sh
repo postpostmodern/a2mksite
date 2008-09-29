@@ -62,8 +62,8 @@ function mk_logs {
     echo "done!"
   fi
   
-  touch "$LOG_DIR/access_log"
-  touch "$LOG_DIR/error_log"
+  touch "$LOG_DIR/access.log"
+  touch "$LOG_DIR/error.log"
 
   echo "Chowning log dir to root..."
   chown -R 0:$SUDO_GID "$LOG_DIR"
