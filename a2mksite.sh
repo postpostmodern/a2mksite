@@ -1,7 +1,7 @@
 #!/bin/bash -
 PATH=/bin:/usr/bin:/sbin:/usr/sbin
 
-if [[ -z "$1" ]] 
+if [[ -z "$1" ]]
 then
   echo "Usage: $0 domain.com"
   exit
@@ -29,7 +29,7 @@ LOGROTATE_CONF_DIR="/etc/logrotate.d"
 LOGROTATE_SITES_DIR="$LOGROTATE_CONF_DIR/sites.d"
 
 # These are the conf files
-APACHE_CONF="$APACHE_CONF_DIR/$DOMAIN"
+APACHE_CONF="$APACHE_CONF_DIR/$DOMAIN.conf"
 LOGROTATE_CONF="$LOGROTATE_SITES_DIR/$DOMAIN.conf"
 
 # This is where the site itself will be created
@@ -61,7 +61,7 @@ function mk_logs {
     mkdir "$LOG_DIR"
     echo "done!"
   fi
-  
+
   touch "$LOG_DIR/access.log"
   touch "$LOG_DIR/error.log"
 
@@ -139,7 +139,7 @@ if [[ -f "$USER_TEMPLATE_DIR/logrotate.conf" ]]
   then LOGROTATE_TEMPLATE="$USER_TEMPLATE_DIR/logrotate.conf"
 elif [[ -f "$DEFAULT_TEMPLATE_DIR/apache.conf" ]]
   then LOGROTATE_TEMPLATE="$DEFAULT_TEMPLATE_DIR/logrotate.conf"
-else 
+else
   echo "No logrotate.conf template can be found. Aborted."
   exit
 fi
@@ -147,17 +147,17 @@ fi
 # Create necessary directories ==========================
 
 if [[ ! -d "$APACHE_CONF_DIR" ]]
-  then 
+  then
   mkdir -p "$APACHE_CONF_DIR"
   chgrp $SUDO_GID "$APACHE_CONF_DIR"
 fi
 if [[ ! -d "$LOGROTATE_SITES_DIR" ]]
-  then 
+  then
   mkdir -p "$LOGROTATE_SITES_DIR"
   chgrp $SUDO_GID "$LOGROTATE_SITES_DIR"
 fi
 if [[ ! -d "$SITES_DIR" ]]
-  then 
+  then
   mkdir -p "$SITES_DIR"
   chown $SUDO_USER:$SUDO_GID "$SITES_DIR"
 fi
@@ -169,11 +169,11 @@ if [[ ! -f "$LOGROTATE_CONF_DIR/sites" ]]
   echo "include $LOGROTATE_SITES_DIR" > "$LOGROTATE_CONF_DIR/sites"
   chgrp $SUDO_GID "$LOGROTATE_CONF_DIR/sites"
 fi
-  
+
 
 # Run those functions ====================================
 
-if [[ -d "$SITE_DIR" ]] 
+if [[ -d "$SITE_DIR" ]]
   then
   echo "$SITE_DIR already exists..."
   select choice in $CHOICES; do
@@ -194,7 +194,7 @@ fi
 
 mk_logs
 
-if [[ -f "$APACHE_CONF" ]] 
+if [[ -f "$APACHE_CONF" ]]
   then
   echo "$APACHE_CONF already exists..."
   select choice in $CHOICES; do
@@ -213,7 +213,7 @@ if [[ -f "$APACHE_CONF" ]]
   mk_apache_conf
 fi
 
-if [[ -f "$LOGROTATE_CONF" ]] 
+if [[ -f "$LOGROTATE_CONF" ]]
   then
   echo "$LOGROTATE_CONF already exists..."
   select choice in $CHOICES; do

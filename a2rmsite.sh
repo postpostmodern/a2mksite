@@ -23,7 +23,7 @@ LOGROTATE_CONF_DIR="/etc/logrotate.d"
 LOGROTATE_SITES_DIR="$LOGROTATE_CONF_DIR/sites.d"
 
 # These are the conf files
-APACHE_CONF="$APACHE_CONF_DIR/$DOMAIN"
+APACHE_CONF="$APACHE_CONF_DIR/$DOMAIN.conf"
 LOGROTATE_CONF="$LOGROTATE_SITES_DIR/$DOMAIN.conf"
 
 # This is where the site itself will be created
