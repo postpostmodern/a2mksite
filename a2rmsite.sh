@@ -48,7 +48,7 @@ function rm_apache_conf {
 
 function rm_logrotate_conf {
   echo "Removing logrotate config file: $FILE..."
-  "$LOGROTATE_CONF"
+  rm "$LOGROTATE_CONF"
   echo "done!"
 }
 
