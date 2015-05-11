@@ -27,6 +27,11 @@ This script was created for use with Apache 2.x on Ubuntu. It will probably work
 * Place this a2mksite directory somewhere on your server (I like /usr/local)
 * Make sure the a2mksite and a2rmsite scripts are executable by you: `chmod 744 a2mksite/a2mksite a2mksite/a2rmsite`
 * Optionally, create Apache and logrotate configuration templates and site skeleton (see below)
+* You might also want to create an alias to the script.
+
+A bash alias would look like this:
+
+    alias a2mksite='sudo /usr/local/a2mksite/a2mksite'
 
 # Usage
 
