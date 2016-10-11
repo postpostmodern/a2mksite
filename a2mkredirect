@@ -33,8 +33,8 @@ APACHE_CONF="$APACHE_CONF_DIR/$DOMAIN.conf"
 
 function mk_apache_conf {
   echo "Creating apache config file: $APACHE_CONF..."
-  sed -e "s:THE_DOMAIN:$DOMAIN:g"\
-      -e "s:TARGET_URL:$TARGET_URL:g"\
+  sed -e "s^THE_DOMAIN^$DOMAIN^g"\
+      -e "s^TARGET_URL^$TARGET_URL^g"\
       "$APACHE_TEMPLATE" > "$APACHE_CONF"
   echo "done!"
 

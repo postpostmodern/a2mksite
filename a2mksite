@@ -77,12 +77,12 @@ function mk_logs {
 
 function mk_apache_conf {
   echo "Creating apache config file: $APACHE_CONF..."
-  sed -e "s:LOG_DIR:$LOG_DIR:g"\
-      -e "s:SITE_DIR:$SITE_DIR:g"\
-      -e "s:USER:$SUDO_USER:g"\
-      -e "s:GROUP:$SUDO_GID:g"\
-      -e "s:ESCAPED_DOMAIN:$ESCAPED_DOMAIN:g"\
-      -e "s:THE_DOMAIN:$DOMAIN:g"\
+  sed -e "s^LOG_DIR^$LOG_DIR^g"\
+      -e "s^SITE_DIR^$SITE_DIR^g"\
+      -e "s^USER^$SUDO_USER^g"\
+      -e "s^GROUP^$SUDO_GID^g"\
+      -e "s^ESCAPED_DOMAIN^$ESCAPED_DOMAIN^g"\
+      -e "s^THE_DOMAIN^$DOMAIN^g"\
       "$APACHE_TEMPLATE" > "$APACHE_CONF"
   echo "done!"
 
